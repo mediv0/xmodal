@@ -1,6 +1,6 @@
 <p align=center>
 
-![](https://i.imgur.com/ahKu2e4.png)
+![](https://i.imgur.com/WguzBpv.gif)
 
 [![npm version](https://badge.fury.io/js/xmodal-vue.svg)](https://badge.fury.io/js/xmodal-vue)
 [![npm](https://img.shields.io/npm/dm/xmodal-vue.svg)](https://www.npmjs.com/package/xmodal-vue)
@@ -13,7 +13,7 @@
 
 ==================================
 
-##### get rid of those ugly 💩 predefined modals
+####get rid of those ugly 💩 predefined modals
 xmodal will let you define custom components and show them as modal. **YOUR APP YOUR RULES!** - too simple and easy
 
 </p>

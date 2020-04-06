@@ -1,33 +1,69 @@
 {
-  "name": "xmodal-vue",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "vue": "^2.6.11"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-eslint": "^4.3.0",
-    "@vue/cli-service": "^4.3.0",
-    "@vue/eslint-config-prettier": "^6.0.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-vue": "^6.2.2",
-    "lint-staged": "^9.5.0",
-    "prettier": "^1.19.1",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,jsx,vue}": [
-      "vue-cli-service lint",
-      "git add"
+    "name": "xmodal-vue",
+    "version": "0.1.1",
+    "private": false,
+    "description": "🚀 a simplistic and easy to use wrapper around your components that will help you create custom modals, from your components",
+    "author": "Mahdi Fakhr",
+    "license": "MIT",
+    "main": "dist/xmodal.ssr.js",
+    "module": "dist/xmodal.esm.js",
+    "unpkg": "dist/xmodal.min.js",
+    "files": [
+        "dist/*",
+        "src/**/*.vue"
+    ],
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
+        "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
+        "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
+        "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@vue/cli-plugin-eslint": "^4.3.0",
+        "@vue/cli-service": "^4.3.0",
+        "@vue/eslint-config-prettier": "^6.0.0",
+        "eslint": "^6.7.2",
+        "eslint-plugin-prettier": "^3.1.1",
+        "eslint-plugin-vue": "^6.2.2",
+        "lint-staged": "^9.5.0",
+        "prettier": "^1.19.1",
+        "vue-template-compiler": "^2.6.11",
+        "husky": "^4.2.3",
+        "rollup": "^1.12.1",
+        "rollup-plugin-buble": "^0.19.6",
+        "rollup-plugin-commonjs": "^10.0.0",
+        "rollup-plugin-replace": "^2.2.0",
+        "rollup-plugin-terser": "^4.0.4",
+        "rollup-plugin-vue": "^5.0.0",
+        "minimist": "^1.2.0",
+        "cross-env": "^5.2.0"
+    },
+    "peerDependencies": {
+        "vue": "^2.2.6"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "homepage": "https://xeniac.ir",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MahdiFakhr/xmodal"
+    },
+    "bugs": {
+        "url": "https://github.com/MahdiFakhr/xmodal/issues"
+    },
+    "keywords": [
+        "vue",
+        "vuejs",
+        "vue modal",
+        "modal",
+        "dynamic modal",
+        "modern modal",
+        "lightweight modal",
+        "simple modal"
     ]
-  }
 }

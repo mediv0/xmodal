@@ -1,6 +1,6 @@
 <p align=center>
 
-![](https://i.imgur.com/ahKu2e4.png)
+![](https://i.imgur.com/WguzBpv.gif)
 
 [![npm version](https://badge.fury.io/js/xmodal-vue.svg)](https://badge.fury.io/js/xmodal-vue)
 [![npm](https://img.shields.io/npm/dm/xmodal-vue.svg)](https://www.npmjs.com/package/xmodal-vue)
@@ -9,11 +9,11 @@
 ------------
 
 # 🎉 Xmodal-Vue 
-[demo](https://www.xeniac.ir/github/xmodal "demo")
+[demo](https://xeniac.ir/github/xmodal "demo")
 
 ==================================
 
-##### get rid of those ugly 💩 predefined modals
+## get rid of those ugly 💩 predefined modals
 xmodal will let you define custom components and show them as modal. **YOUR APP YOUR RULES!** - too simple and easy
 
 </p>
@@ -389,4 +389,8 @@ There are some shortcuts that you can use to modify xmodal.
 
 ------------
  ## License 📄
+<<<<<<< HEAD
  This project is licensed under the MIT License - see the LICENSE file for details.
+=======
+ This project is licensed under the MIT License - see the LICENSE file for details.
+>>>>>>> 8f9549d7beb9e03170bdaa06d579be51e7c1b821

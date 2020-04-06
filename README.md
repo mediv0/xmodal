@@ -388,9 +388,6 @@ There are some shortcuts that you can use to modify xmodal.
 [![William Gates](https://avatars1.githubusercontent.com/u/50080886?s=96&v=4")](https://github.com/WilliamGates99 "William Gates")
 
 ------------
- ## License 📄
-<<<<<<< HEAD
- This project is licensed under the MIT License - see the LICENSE file for details.
-=======
- This project is licensed under the MIT License - see the LICENSE file for details.
->>>>>>> 8f9549d7beb9e03170bdaa06d579be51e7c1b821
+## License 📄
+
+This project is licensed under the MIT License - see the LICENSE file for details.

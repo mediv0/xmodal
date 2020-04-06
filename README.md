@@ -9,7 +9,7 @@
 ------------
 
 # 🎉 Xmodal-Vue 
-[demo](https://www.xeniac.ir/github/xmodal "demo")
+[demo](https://xeniac.ir/github/xmodal "demo")
 
 ==================================
 

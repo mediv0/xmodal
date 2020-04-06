@@ -13,7 +13,7 @@
 
 ==================================
 
-####get rid of those ugly 💩 predefined modals
+## get rid of those ugly 💩 predefined modals
 xmodal will let you define custom components and show them as modal. **YOUR APP YOUR RULES!** - too simple and easy
 
 </p>

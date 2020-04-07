@@ -1,6 +1,6 @@
 {
     "name": "xmodal-vue",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "private": false,
     "description": "🚀 a simplistic and easy to use wrapper around your components that will help you create custom modals, from your components",
     "author": "Mahdi Fakhr",
@@ -48,13 +48,13 @@
             "pre-commit": "lint-staged"
         }
     },
-    "homepage": "https://xeniac.ir",
+    "homepage": "https://xeniac.ir/github/xmodal",
     "repository": {
         "type": "git",
-        "url": "https://github.com/MahdiFakhr/xmodal"
+        "url": "https://github.com/XeniacDev/xmodal"
     },
     "bugs": {
-        "url": "https://github.com/MahdiFakhr/xmodal/issues"
+        "url": "https://github.com/XeniacDev/xmodal/issues"
     },
     "keywords": [
         "vue",

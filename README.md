@@ -1,6 +1,6 @@
 <p align=center>
 
-![](https://i.imgur.com/ahKu2e4.png)
+![](https://i.imgur.com/WguzBpv.gif)
 
 [![npm version](https://badge.fury.io/js/xmodal-vue.svg)](https://badge.fury.io/js/xmodal-vue)
 [![npm](https://img.shields.io/npm/dm/xmodal-vue.svg)](https://www.npmjs.com/package/xmodal-vue)
@@ -9,11 +9,11 @@
 ------------
 
 # 🎉 Xmodal-Vue 
-[demo](https://www.xeniac.ir/github/xmodal "demo")
+[demo](https://xeniac.ir/github/xmodal "demo")
 
 ==================================
 
-##### get rid of those ugly 💩 predefined modals
+## get rid of those ugly 💩 predefined modals
 xmodal will let you define custom components and show them as modal. **YOUR APP YOUR RULES!** - too simple and easy
 
 </p>
@@ -36,6 +36,7 @@ yarn add xmodal-vue
 
 
 **📕 How to use**
+
 For using as a plugin:
 ```javascript
 import Vue from "vue";
@@ -97,10 +98,10 @@ Params prop is an object that will pass data to the modal. You can see available
 |  isDisable  | Boolean  |  false  | disable click events on modal  | 
 |  props  | Object  |  null  | by this option, you can send props to the mounted component  | 
 
-**⚠️ You need to specify a component for each modal instance. All other options are not necessary**
+**You need to specify a component for each modal instance. All other options are not necessary ⚠️**
 
 
-### 📝 v-model
+### v-model 📝
 You can bind xmodal to a boolean value and control it. This boolean value can be a vuex getter, a function, etc...
 It is an optional property.
 
@@ -108,7 +109,7 @@ It is an optional property.
 
 
 ------------
-**💡 How to use this in your project**
+**How to use this in your project 💡**
 You have to use this modal in routes and not inside of other components. Also, you only need one instance on each route.
 ✅ For example, you can do something like this:
 ```javascript
@@ -197,11 +198,11 @@ params: {
 
 ------------
 
-- ##### animations
+##### animations
 You can set animations for modal by defining its name.
 
-|  animation name  |
-| :------------ | :------------ |
+#### animation list 
+
 |  fade  | 
 | ------  |
 | scaleIn  |
@@ -218,7 +219,7 @@ You can set animations for modal by defining its name.
 
 ------------
 
-- ##### hasTimer
+##### hasTimer
 It will set a timer based on seconds for your modal.
 hasTimer comes with an indicator on top of the page, default color is white.
 🟢 hasTimer can be a number, string or object. If you want to change indicator color you can pass an object for hasTimer.
@@ -239,7 +240,7 @@ params: {
 
 ------------
 
-- ##### props
+##### props
 You can send props to the component that you mounted to show as modal.
 
 ```javascript
@@ -259,7 +260,7 @@ You can send props to the component, as many as you want.
 
 ------------
 
-- ##### isDisable
+##### isDisable
 You can disable modal click events to preventing users to close the modal.
 🟢 isDisable is useful when you want to close modal based on some condition. ( like: checking if the input is correct or etc...)
 
@@ -287,7 +288,7 @@ You can call them by calling this.$xmodal
 
 ------------
 
-- ##### this.$xmodal.open(params)
+##### this.$xmodal.open(params)
 This is where you can open multiple modals!
 The open function can take params as its argument.
 
@@ -348,7 +349,7 @@ like:
 <template>
     <div id="app">
         <img alt="Modal logo" src="./assets/Modal.png" />
-        <button @click="Close">Open modal with global fnction</button>
+        <button @click="Close">Close modal with global fnction</button>
 		<h1>i'm about to end this man's whole career !</h1>
     </div>
 </template
@@ -383,9 +384,10 @@ There are some shortcuts that you can use to modify xmodal.
  #### Feel free to fork or edit this project.
  this project is in alpha feel free to open a new issue and rp
 
-## 🍰 Contributing
+## Contributing 🍰 
 [![William Gates](https://avatars1.githubusercontent.com/u/50080886?s=96&v=4")](https://github.com/WilliamGates99 "William Gates")
 
 ------------
- ##  📄 License
- This project is licensed under the MIT License - see the LICENSE file for details.
+## License 📄
+
+This project is licensed under the MIT License - see the LICENSE file for details.

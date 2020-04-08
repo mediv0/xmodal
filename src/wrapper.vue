@@ -1,6 +1,6 @@
 <template>
     <transition name="fade">
-        <div v-if="setIsModalOpen">
+        <div v-if="setIsModalOpen" class="xmodal-wrapper">
             <xmodalbase
                 :key="2"
                 :component="modalParams.component"
@@ -111,6 +111,15 @@ export default {
 </script>
 
 <style scoped>
+.xmodal-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 997;
+}
+
 /* base fade style */
 .fade-enter-active,
 .fade-leave-active {

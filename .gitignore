@@ -2,6 +2,7 @@
 node_modules
 /dist
 .VSCodeCounter
+releases
 
 # local env files
 .env.local

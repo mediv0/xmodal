@@ -356,7 +356,7 @@ export default {
 }
 .xmodal__backdrop {
     z-index: 998;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;

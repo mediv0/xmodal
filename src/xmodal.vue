@@ -5,7 +5,7 @@
             :style="[{ backgroundColor: backgroundColor, opacity: opacity }]"
             @click="closeModal"
         ></div>
-        <transition :name="animation">
+        <transition :name="animation" v-on:after-enter="modalMounted">
             <component
                 v-if="isComponentAnimationRdy"
                 @before-leave="componentAnimationState(false)"
@@ -157,6 +157,9 @@ export default {
             this.hasTimerInterval = setTimeout(() => {
                 this.closeModal();
             }, this.duration * 1000);
+        },
+        modalMounted() {
+            this.$emit("modalMounted");
         }
     },
 
@@ -356,7 +359,7 @@ export default {
 }
 .xmodal__backdrop {
     z-index: 998;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;

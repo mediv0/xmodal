@@ -1,5 +1,5 @@
 <template>
-    <transition name="fade">
+    <transition name="fade" v-on:after-leave="modalLeft">
         <div v-if="setIsModalOpen" class="xmodal-wrapper">
             <xmodalbase
                 :key="2"
@@ -10,6 +10,7 @@
                 :isDisable="modalParams.isDisable"
                 :animation="modalParams.animation"
                 :props="modalParams.props"
+                @modalMounted="modalMounted"
             >
             </xmodalbase>
         </div>
@@ -43,7 +44,9 @@ export default {
             // use this Object as cache for default param options
             cached: {},
 
-            isBind: false
+            isBind: false,
+
+            modalCloseCallBackFromEvent: null
         };
     },
     computed: {
@@ -70,6 +73,21 @@ export default {
                 }
             }
             return truthyProps;
+        },
+        modalMounted() {
+            // refactor later
+            if (this.modalParams.mounted) {
+                this.modalParams.mounted();
+            }
+        },
+        modalLeft() {
+            // refactor later
+            if (this.modalParams.destroyed) {
+                this.modalParams.destroyed();
+            }
+            if (this.modalCloseCallBackFromEvent) {
+                this.modalCloseCallBackFromEvent();
+            }
         }
     },
     watch: {
@@ -94,8 +112,9 @@ export default {
         }
 
         // listen to global events
-        events.$on("close", () => {
+        events.$on("close", modalCallBack => {
             this.showModal();
+            this.modalCloseCallBackFromEvent = modalCallBack;
         });
         events.$on("open", params => {
             this.isBind = false;
@@ -112,12 +131,13 @@ export default {
 
 <style scoped>
 .xmodal-wrapper {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 997;
+    overflow: hidden;
 }
 
 /* base fade style */

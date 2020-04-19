@@ -341,7 +341,7 @@ you literally can open new modals by this.modal.open() with brand new options, o
 
 ------------
 
-- ##### this.$xmodal.close()
+- ##### this.$xmodal.close(callback)
 It will close all open modals in the current view(route) at once.
 
 like: 
@@ -359,6 +359,7 @@ export default {
     name: "close",
     methods: {
         Close() {
+            // using without callback
             this.$xmodal.close();
         }
     }
@@ -366,6 +367,76 @@ export default {
 </script>
 ```
 
+
+# Callback functions
+there are two callbacks that you can use to write code on when modal is mounted or destroyed
+
+| Callback | Description |
+| --- | --- |
+| mounted | this callback will run after the modal is fully mounted |
+| destroyed | this callback will run after the modal is fully destroyed |
+
+### example
+```javascript
+export default {
+    name: "App",
+    data() {
+        return {
+            // default options
+            options: {
+                component: require("./components/no.vue").default,
+
+                // callbacks
+                mounted: this.modalMounted,
+                destroyed: this.modalDestroyed
+            }
+        };
+    },
+    methods: {
+        modalMounted() {
+            console.log("modal is mounted at this point!");
+        },
+        modalDestroyed() {
+            console.log("modal is destroyed at this point!");
+        }
+    }
+};
+```
+
+### using with global methods
+```javascript
+export default {
+    name: "App",
+    data() {
+        return {
+            // default options
+            options: {
+                component: require("./components/no.vue").default,
+
+                // callbacks
+                mounted: this.default_modalMounted,
+                destroyed: this.default_modalDestroyed
+            }
+        };
+    },
+    methods: {
+        Open() {
+            this.$xmodal.open({
+                component: require("./components/newComponent.vue").default,
+
+                // you can overwrite callbacks like other options !
+                mounted: this.overwrite_modalMounted,
+                destroyed: this.overwrite_modalDestroyed
+            })
+        },
+        Close() {
+            this.$xmodal.close(() => {
+                console.log("this will run after modal is destroyed");
+            })
+        }
+    }
+};
+```
 
 ------------
 

@@ -8,8 +8,8 @@ function install(Vue) {
     this.installed = true;
 
     Vue.prototype.$xmodal = {
-        close() {
-            events.$emit("close");
+        close(closeCallback) {
+            events.$emit("close", closeCallback);
         },
 
         /**

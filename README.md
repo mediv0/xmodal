@@ -463,7 +463,7 @@ This project is open to and encourages contributions! Feel free to discuss any b
 5.  [Submit a pull request!](https://github.com/XeniacDev/xmodal/pulls)
 
 
-## Contributing 🍰 
+## contributors 🍰 
 [![William Gates](https://avatars1.githubusercontent.com/u/50080886?s=96&v=4")](https://github.com/WilliamGates99 "William Gates")
 
 ------------

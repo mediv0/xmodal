@@ -277,7 +277,7 @@ params: {
 
 
  
- # Global Methods
+ # Global Functions
 You have access to 2 global methods for controlling the modal instance.
 You can call them by calling this.$xmodal
 

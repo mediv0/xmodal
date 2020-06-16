@@ -23,7 +23,11 @@ const baseConfig = {
                 isProduction: false
             }
         },
-        postVue: [buble()]
+        postVue: [
+            buble({
+                transforms: { asyncAwait: false }
+            })
+        ]
     }
 };
 

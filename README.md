@@ -173,7 +173,7 @@ export default {
 ```
 # Params prop options
 
-- ##### components
+- ##### component
 You need to pass a reference of your component to modal. In that way, modal can render your component on the page.
 ```javascript
 params: {

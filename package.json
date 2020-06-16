@@ -19,7 +19,9 @@
         "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
         "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
     },
-    "dependencies": {},
+    "dependencies": {
+        
+    },
     "devDependencies": {
         "@vue/cli-plugin-eslint": "^4.3.0",
         "@vue/cli-service": "^4.3.0",
@@ -42,7 +44,7 @@
         "vue-template-compiler": "^2.6.11"
     },
     "peerDependencies": {
-        "vue": "^2.2.6"
+        "vue": "^2.6.11"
     },
     "husky": {
         "hooks": {

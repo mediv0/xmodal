@@ -1,6 +1,7 @@
 <template>
     <div>
         <button @click="isModalOpen = !isModalOpen">open</button>
+        <button @click="open">open with global functions</button>
         <xmodal v-model="isModalOpen" :params="options" />
     </div>
 </template>
@@ -16,7 +17,7 @@ export default {
         return {
             isModalOpen: false,
             options: {
-                component: require("./modal.vue").default,
+                component: import("./modal.vue"),
                 backgroundColor: "#000000",
                 opacity: "0.7",
                 mounted: this.modalOpen,
@@ -30,6 +31,13 @@ export default {
         },
         modalClose() {
             console.log("modals closed");
+        },
+        open() {
+            console.log("opening");
+            this.$xmodal.open({
+                component: require("./modal2.vue").default,
+                backgroundColor: "#0ffddd"
+            });
         }
     }
 };

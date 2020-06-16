@@ -1,6 +1,6 @@
 {
     "name": "xmodal-vue",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "private": false,
     "description": "🚀 a simplistic and easy to use wrapper around your components that will help you create custom modals, from your components",
     "author": "Mahdi Fakhr",
@@ -42,7 +42,7 @@
         "vue-template-compiler": "^2.6.11"
     },
     "peerDependencies": {
-        "vue": "^2.2.6"
+        "vue": "^2.6.11"
     },
     "husky": {
         "hooks": {

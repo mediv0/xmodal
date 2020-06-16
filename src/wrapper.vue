@@ -64,16 +64,6 @@ export default {
             }
             this.isModalOpen = false;
         },
-        clearProps(data) {
-            let truthyProps = Object.assign({}, data);
-
-            for (let prop in this.reducedXdata) {
-                if (!this.truthyProps[prop]) {
-                    delete this.truthyProps[prop];
-                }
-            }
-            return truthyProps;
-        },
         modalMounted() {
             // refactor later
             if (this.modalParams.mounted) {
@@ -88,6 +78,13 @@ export default {
             if (this.modalCloseCallBackFromEvent) {
                 this.modalCloseCallBackFromEvent();
             }
+        },
+        async isComponentImported(params = this.params) {
+            if (typeof params.component.then == "function") {
+                await params.component.then(value => {
+                    params.component = value.default;
+                });
+            }
         }
     },
     watch: {
@@ -95,19 +92,21 @@ export default {
             if (newVal) {
                 this.isBind = true;
                 this.modalParams = Object.assign({}, this.cached);
-
                 this.isModalOpen = true;
             }
         }
     },
     beforeMount() {
         // INITILIZE PROPS
-        this.cached = Object.assign({}, this.params);
         if (this.params.component) {
-            this.modalParams = this.clearProps(this.params);
+            // check if user used import() keyword
+            this.isComponentImported().then(() => {
+                this.modalParams = this.params;
+                this.cached = Object.assign({}, this.params);
+            });
         } else {
             throw new Error(
-                `Please provide a component. check component's path and try again`
+                `Please provide a component. check component's path and try again, 404 component not found`
             );
         }
 
@@ -118,12 +117,10 @@ export default {
         });
         events.$on("open", params => {
             this.isBind = false;
-            if (typeof params === "object") {
-                params = this.clearProps(params);
-            }
-            this.modalParams = Object.assign({}, this.cached, params);
-
-            this.isModalOpen = true;
+            this.isComponentImported(params).then(() => {
+                this.modalParams = Object.assign({}, this.cached, params);
+                this.isModalOpen = true;
+            });
         });
     }
 };

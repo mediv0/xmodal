@@ -10,6 +10,7 @@
 
 # 🎉 Xmodal-Vue 
 [demo](https://xeniac.ir/github/xmodal "demo")
+[codesandbox](https://codesandbox.io/s/shy-bird-1jjb3?file=/src/App.vue "codesandbox")
 
 ==================================
 

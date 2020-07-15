@@ -1,5 +1,6 @@
 import component from "./wrapper.vue";
 import { events } from "./events";
+import store from "./store";
 
 function install(Vue) {
     if (this.installed) {
@@ -22,6 +23,30 @@ function install(Vue) {
          */
         open(params) {
             events.$emit("open", params);
+        },
+
+        openFromStore(name) {
+            if (store.has(name)) {
+                this.open(store.get(name));
+            } else {
+                throw new Error(`Modal with the name of ${name} not found`);
+            }
+        },
+
+        save(name, options) {
+            return store.save(name, options);
+        },
+
+        get(name) {
+            return store.get(name.toString());
+        },
+
+        delete(name) {
+            return store.delete(name);
+        },
+
+        entries() {
+            return store.entries();
         }
     };
 

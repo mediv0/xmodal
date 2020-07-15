@@ -24,10 +24,6 @@ xmodal will let you define custom components and show them as modal. **YOUR APP 
 
 This little component comes with customization tools that will make your life a little bit easier.
 
-------------
-
-
-# [documentation](link) 
 
 
 ------------
@@ -40,6 +36,7 @@ This project is open to and encourages contributions! Feel free to discuss any b
 3.  Commit your changes (`git commit -am 'add new feature'`)
 4.  Push to the branch (`git push origin new-feature-branch`)
 5.  [Submit a pull request!](https://github.com/XeniacDev/xmodal/pulls)
+
 
 
 ## contributors 🍰 

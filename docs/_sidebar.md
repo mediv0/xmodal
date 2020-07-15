@@ -31,7 +31,7 @@
 
   - Global Functions
     - [Open](docFiles/open.md)
-    - [OpenFromStore](docFiles/OpenFromStore)
+    - [OpenFromStore](docFiles/openFromStore)
     - [Close](docFiles/close.md)
     - [Save](docFiles/save.md)
     - [Get](docFiles/get.md)

@@ -21,7 +21,8 @@ export default {
                 backgroundColor: "#000000",
                 opacity: "0.7",
                 mounted: this.modalOpen,
-                destroyed: this.modalClose
+                destroyed: this.modalClose,
+                animation: "scaleIn"
             }
         };
     },
@@ -39,6 +40,11 @@ export default {
                 backgroundColor: "#0ffddd"
             });
         }
+    },
+
+    mounted() {
+        let modals = this.$xmodal.entries();
+        console.log(modals);
     }
 };
 </script>

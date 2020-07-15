@@ -24,6 +24,9 @@ xmodal will let you define custom components and show them as modal. **YOUR APP 
 
 This little component comes with customization tools that will make your life a little bit easier.
 
+------------
+
+#[documentation](https://xeniacdev.github.io/xmodal/)
 
 
 ------------

@@ -25,6 +25,3 @@ Features:
 
   - add support for callback functions
 
-
-
-Added a global collection to save modal options globally 

@@ -27,7 +27,7 @@ This little component comes with customization tools that will make your life a 
 ------------
 
 
-# [documentation](link) 
+# [documentation](https://xeniacdev.github.io/xmodal/) 
 
 
 ------------

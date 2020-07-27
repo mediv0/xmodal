@@ -1,9 +1,11 @@
 class Store {
     constructor() {
-        if (Store.instance == null) {
-            this.modals = new Map();
+        if (Store.exists) {
+            return Store.instance;
         }
-        return Store.instance;
+        Store.exists = true;
+        Store.instance = this;
+        this.modals = new Map();
     }
 
     // save new modal in the map

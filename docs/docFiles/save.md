@@ -1,4 +1,4 @@
-## this.$xmodal.save(name, options) : Object
+## this.$xmodal.save(name, options) : Boolean
 
 the save() method will add new modal to the collection or update an existing modal. return type is boolean
 

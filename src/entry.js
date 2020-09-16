@@ -21,8 +21,8 @@ function install(Vue) {
          *
          * this.$xmodals.open({path: "./your/component/path", props: {prop1: "something"} })
          */
-        open(params) {
-            events.$emit("open", params);
+        open(params, name) {
+            events.$emit("open", params, name);
         },
 
         openFromStore(name) {

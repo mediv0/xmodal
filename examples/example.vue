@@ -1,8 +1,11 @@
 <template>
     <div>
-        <button @click="isModalOpen = !isModalOpen">open</button>
-        <button @click="open">open with global functions</button>
-        <xmodal v-model="isModalOpen" :params="options" />
+        <button @click="isModalOpen1 = !isModalOpen1">open</button>
+        <button @click="open">
+            open with global functions
+        </button>
+        <xmodal v-model="isModalOpen1" :params="options1" />
+        <xmodal name="mahdi" />
     </div>
 </template>
 
@@ -15,14 +18,21 @@ Vue.use(xmodal);
 export default {
     data() {
         return {
-            isModalOpen: false,
-            options: {
+            isModalOpen1: false,
+            isModalOpen2: false,
+            options1: {
                 component: import("./modal.vue"),
                 backgroundColor: "#000000",
                 opacity: "0.7",
-                mounted: this.modalOpen,
-                destroyed: this.modalClose,
-                animation: "scaleIn"
+                animation: "scaleIn",
+                key: 3
+            },
+            options2: {
+                component: import("./modal2.vue"),
+                backgroundColor: "#000000",
+                opacity: "0.7",
+                animation: "scaleIn",
+                key: 5
             }
         };
     },
@@ -34,11 +44,7 @@ export default {
             console.log("modals closed");
         },
         open() {
-            console.log("opening");
-            this.$xmodal.open({
-                component: require("./modal2.vue").default,
-                backgroundColor: "#0ffddd"
-            });
+            this.$xmodal.open(this.options2, "mahdi");
         }
     },
 

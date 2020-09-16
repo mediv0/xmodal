@@ -2,7 +2,6 @@
     <transition name="fade" v-on:after-leave="modalLeft">
         <div v-if="setIsModalOpen" class="xmodal-wrapper">
             <xmodalbase
-                :key="2"
                 :component="modalParams.component"
                 :backgroundColor="modalParams.backgroundColor"
                 :opacity="modalParams.opacity"
@@ -27,7 +26,11 @@ export default {
         },
         params: {
             type: Object,
-            required: true
+            default: () => {}
+        },
+        name: {
+            type: String,
+            default: undefined
         }
     },
     components: {
@@ -37,29 +40,23 @@ export default {
     data() {
         return {
             isModalOpen: false,
-
             // this will send to xmodal component
             modalParams: {},
-
             // use this Object as cache for default param options
             cached: {},
-
-            isBind: false,
-
+            isBind: undefined,
             modalCloseCallBackFromEvent: null
         };
     },
     computed: {
         setIsModalOpen() {
             return this.isModalOpen;
-        },
-        isComponentWrapperBinded() {
-            return this.isBinded;
         }
     },
     methods: {
         showModal() {
-            if (this.isBind) {
+            if (this.isBinded()) {
+                this.isBind = false;
                 this.$emit("input", !this.value);
             }
             this.isModalOpen = false;
@@ -85,6 +82,13 @@ export default {
                     params.component = value.default;
                 });
             }
+        },
+        isBinded() {
+            if (this.isBind === undefined || this.isBind === false) {
+                return false;
+            } else {
+                return true;
+            }
         }
     },
     watch: {
@@ -98,16 +102,20 @@ export default {
     },
     beforeMount() {
         // INITILIZE PROPS
-        if (this.params.component) {
-            // check if user used import() keyword
-            this.isComponentImported().then(() => {
-                this.modalParams = this.params;
-                this.cached = Object.assign({}, this.params);
-            });
+        if (this.value !== null) {
+            if (this.params.component) {
+                // check if user used import() keyword
+                this.isComponentImported().then(() => {
+                    this.modalParams = this.params;
+                    this.cached = Object.assign({}, this.params);
+                });
+            } else {
+                throw new Error(
+                    `Please provide a component. check component's path and try again, 404 component not found`
+                );
+            }
         } else {
-            throw new Error(
-                `Please provide a component. check component's path and try again, 404 component not found`
-            );
+            this.cached = Object.assign({}, {});
         }
 
         // listen to global events
@@ -115,12 +123,20 @@ export default {
             this.showModal();
             this.modalCloseCallBackFromEvent = modalCallBack;
         });
-        events.$on("open", params => {
-            this.isBind = false;
-            this.isComponentImported(params).then(() => {
-                this.modalParams = Object.assign({}, this.cached, params);
-                this.isModalOpen = true;
-            });
+        events.$on("open", (params, name) => {
+            console.log("hello", this.name, name);
+            if (this.name === name) {
+                this.isBind = false;
+                this.isComponentImported(params).then(() => {
+                    this.modalParams = Object.assign(
+                        {},
+                        this.cached,
+                        params,
+                        name
+                    );
+                    this.isModalOpen = true;
+                });
+            }
         });
     }
 };

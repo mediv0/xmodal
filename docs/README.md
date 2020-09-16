@@ -1,3 +1,9 @@
+# ⚠️ this package is deprecated
+#### we won't maintain this package anymore. but you still can use it for training purposes and in small scale projects
+We will be working on a more robust and better version of xmodal and we will release it in the future.
+
+--------------------
+
 <p align=center>
 
 ![](https://i.imgur.com/WguzBpv.gif)

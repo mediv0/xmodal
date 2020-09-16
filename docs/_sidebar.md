@@ -13,6 +13,7 @@
 
   - [Demo](docFiles/demo.md)
   - [Your First Modal](docFiles/firstModal.md)
+  - [Edge cases(using multiple instances)](docFiles/multipleInstances.md)
   - [Default Options](docFiles/defaultOptions.md)
 
 - Customization

@@ -1,3 +1,9 @@
+# ⚠️ this package is deprecated
+#### we won't maintain this package anymore. but you still can use it for training purposes and in small scale projects
+We will be working on a more robust and better version of xmodal and we will release it in the future.
+
+--------------------
+
 <p align=center>
 
 ![](https://i.imgur.com/WguzBpv.gif)
@@ -26,8 +32,8 @@ This little component comes with customization tools that will make your life a 
 
 ------------
 
-# [documentation](https://xeniacdev.github.io/xmodal/)
 
+# [documentation](https://xeniacdev.github.io/xmodal/) 
 
 
 ------------
@@ -40,7 +46,6 @@ This project is open to and encourages contributions! Feel free to discuss any b
 3.  Commit your changes (`git commit -am 'add new feature'`)
 4.  Push to the branch (`git push origin new-feature-branch`)
 5.  [Submit a pull request!](https://github.com/XeniacDev/xmodal/pulls)
-
 
 
 ## contributors 🍰 

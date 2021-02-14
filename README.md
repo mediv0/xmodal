@@ -1,6 +1,6 @@
-# ⚠️ this package is deprecated
-#### we won't maintain this package anymore. but you still can use it for training purposes and in small scale projects
-We will be working on a more robust and better version of xmodal and we will release it in the future.
+# ⚠️
+#### I won't maintain this package anymore. but you still can use it for training purposes and in small/medium scale projects
+I will be working on a more robust and better version of xmodal and we will release it in the future.
 
 --------------------
 

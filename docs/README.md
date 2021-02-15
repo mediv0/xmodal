@@ -1,4 +1,4 @@
-# ⚠️ this package is deprecated
+# ⚠️
 #### we won't maintain this package anymore. but you still can use it for training purposes and in small scale projects
 We will be working on a more robust and better version of xmodal and we will release it in the future.
 
@@ -29,12 +29,6 @@ xmodal will let you define custom components and show them as modal. **YOUR APP 
 </p>
 
 This little component comes with customization tools that will make your life a little bit easier.
-
-------------
-
-
-# [documentation](https://xeniacdev.github.io/xmodal/) 
-
 
 ------------
 ## Contributing
